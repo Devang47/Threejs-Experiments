@@ -23,7 +23,7 @@ const params = {
     y: 4,
     z: 2.9,
   },
-  ambientLight: .1,
+  ambientLight: 0.1,
   bgColor: "#ffffff",
   fog: 0.01,
   postProcessing: "rgb + dot",
@@ -58,6 +58,8 @@ function init() {
 
   const cubeTextureLoader = new THREE.CubeTextureLoader();
 
+  const textureLoader = new THREE.TextureLoader();
+
   /**
    * Lights
    */
@@ -76,7 +78,7 @@ function init() {
   params.lightColor = 0xffffff;
   const directionalLight = new THREE.PointLight(params.lightColor, 1, 50);
   directionalLight.position.set(params.light.x, params.light.y, params.light.z);
-  directionalLight.shadow.radius = 8
+  directionalLight.shadow.radius = 8;
 
   params.bias = 0.05;
   directionalLight.shadow.normalBias = params.bias;
@@ -94,7 +96,7 @@ function init() {
     .min(0)
     .max(10)
     .step(0.01)
-    .name('light-x')
+    .name("light-x")
     .onChange(() => {
       directionalLight.position.x = params.light.x;
     });
@@ -103,7 +105,7 @@ function init() {
     .min(0)
     .max(10)
     .step(0.01)
-    .name('light-y')
+    .name("light-y")
     .onChange(() => {
       directionalLight.position.x = params.light.y;
     });
@@ -112,7 +114,7 @@ function init() {
     .min(0)
     .max(10)
     .step(0.01)
-    .name('light-z')
+    .name("light-z")
     .onChange(() => {
       directionalLight.position.x = params.light.z;
     });
@@ -120,20 +122,33 @@ function init() {
   /**
    * objects
    */
-  params.planeColor = 0xffffff;
+
+  const roadTexture = textureLoader.load("./textures/Road/1.jpg");
+  const roadNormalTexture = textureLoader.load("./textures/Road/normal.jpg");
+  const roadRoughnessTexture = textureLoader.load(
+    "./textures/Road/roughness.jpg",
+    (texture) => {
+      texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+    }
+  );
+
+  params.planeColor = 0x3f3f3f;
   const planeMaterial = new THREE.MeshStandardMaterial({
     color: params.planeColor,
+    map: roadTexture,
+    roughnessMap: roadRoughnessTexture,
+    normalMap: roadNormalTexture,
   });
   planeMaterial.metalness = 0.1;
   planeMaterial.roughness = 1;
 
   const plane = new THREE.Mesh(
-    new THREE.PlaneBufferGeometry(80, 80),
+    new THREE.PlaneBufferGeometry(20, 20),
     planeMaterial
   );
-  plane.rotation.x = Math.PI / 2;
-  plane.material.side = THREE.DoubleSide;
+  plane.rotation.x = - Math.PI / 2;
   scene.add(plane);
+
   gui.addColor(params, "planeColor").onChange(() => {
     plane.material.color = new THREE.Color(params.planeColor);
   });
