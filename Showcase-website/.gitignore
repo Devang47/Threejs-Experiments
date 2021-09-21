@@ -112,6 +112,9 @@ web_modules/
 .cache
 .parcel-cache
 
+# React.js build
+build/
+
 # Next.js build output
 .next
 out
