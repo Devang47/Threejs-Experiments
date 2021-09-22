@@ -33,6 +33,7 @@ function Header() {
           </button>
         </div>
       </div>
+      <div className="canvas_right shadow"></div>
 
       <span className="circle_1"></span>
       <span className="circle_2"></span>
