@@ -5,20 +5,23 @@ import ProjectsData from "./ProjectsData";
 function Works() {
   return (
     <section>
+      <div className="wrapper">
+
       <h2 className="section_head font_2">Recent Works:</h2>
       <div className="projects">
         {ProjectsData.map((data) => {
           return (
             <Project
-              projectHead={data.projectName}
-              key={data.id}
-              projectDetails={data.projectDetails}
-              coverImg={data.coverImg}
-              projectLinks={data.links}
+            projectHead={data.projectName}
+            key={data.id}
+            projectDetails={data.projectDetails}
+            coverImg={data.coverImg}
+            projectLinks={data.links}
             />
-          );
-        })}
+            );
+          })}
       </div>
+          </div>
     </section>
   );
 }

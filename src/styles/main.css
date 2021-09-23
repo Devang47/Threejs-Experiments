@@ -36,7 +36,6 @@ body {
 }
 
 .font_1 {
-  font-family: Helvetica-now;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
@@ -406,7 +405,7 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 50px 20px;
+  padding: 40px 20px;
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -414,6 +413,8 @@ header {
 
 header .left_text {
   padding: 0 10px;
+  max-width: 395px;
+  margin: 0 auto;
 }
 
 header .left_text h1 {
@@ -473,7 +474,7 @@ header .left_text .social_links a svg {
 }
 
 header .left_text .take_a_look {
-  margin-top: 55px;
+  margin-top: 65px;
 }
 
 header .left_text .take_a_look button {
@@ -557,6 +558,11 @@ section {
   width: 100%;
 }
 
+section .wrapper {
+  max-width: 395px;
+  margin: 0 auto;
+}
+
 section h2 {
   font-size: 24px;
   font-weight: 700 !important;
@@ -591,7 +597,7 @@ section .projects {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  gap: 30px;
+  gap: 50px;
   margin: 40px auto;
 }
 
@@ -605,6 +611,15 @@ section .projects article {
   padding: 20px;
   position: relative;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 section .projects article .details {
@@ -612,17 +627,17 @@ section .projects article .details {
 }
 
 section .projects article .details h2 {
-  font-size: 35px;
+  font-size: 32px;
   width: 80%;
   margin: 20px 0;
   color: #e4f8ff;
 }
 
 section .projects article .details p {
-  margin: 20px 0;
   font-size: 16px;
   color: #b9d0d9;
   line-height: 1.5;
+  margin: 20px 0 25px;
 }
 
 section .projects article .details .links {
@@ -633,7 +648,7 @@ section .projects article .details .links {
       -ms-flex-align: center;
           align-items: center;
   gap: 15px;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 section .projects article .details .links a {
@@ -649,8 +664,8 @@ section .projects article .details .links a:hover {
 }
 
 section .projects article .details .links a svg {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
 }
 
 section .projects article img {
@@ -661,4 +676,38 @@ section .projects article img {
      object-fit: cover;
   -webkit-filter: blur(2px);
           filter: blur(2px);
+}
+
+footer {
+  padding: 50px 0 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer h3 {
+  font-size: 22px;
+  position: relative;
+}
+
+footer h3::after {
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100px;
+  height: 3px;
+  background-color: #11b4fa;
 }

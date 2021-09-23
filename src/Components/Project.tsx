@@ -18,7 +18,10 @@ function Project({
   return (
     <article className="project_wrapper shadow">
       <div className="details">
-        <h2 className="font_2 ">{projectHead}</h2>
+        <h2 className="font_1 ">
+          {projectHead}
+          <span className="highlighted">.</span>
+        </h2>
         <p className="font_2">{projectDetails}</p>
         <div className="links">
           <a

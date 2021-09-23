@@ -46,14 +46,12 @@ body {
 }
 
 .font_1 {
-  font-family: Helvetica-now;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
 
 .font_2 {
   font-family: Helvetica-now;
-  // font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
@@ -73,3 +71,4 @@ body {
 @import "./normalize";
 @import "./header";
 @import "./projects";
+@import "./footer";
