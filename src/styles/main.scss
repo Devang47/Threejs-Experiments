@@ -64,7 +64,7 @@ header {
   .left_text {
     padding: 0 10px;
     h1 {
-      font-size: 35px;
+      font-size: 38px;
       line-height: 1.4;
       font-weight: 800;
       margin: 30px 0;
@@ -86,7 +86,8 @@ header {
       font-size: 18px;
       line-height: 1.6;
       color: $sub_heading;
-      max-width: 300px;
+      width: 90%;
+      max-width: 380px;
     }
     .social_links {
       margin-top: 17px;
