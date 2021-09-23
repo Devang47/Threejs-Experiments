@@ -17,8 +17,8 @@ function Project({
 }: props) {
   return (
     <article className="project_wrapper">
-      <h2>{projectHead}</h2>
-      <p>{projectDetails}</p>
+      <h2 className='font_2'>{projectHead}</h2>
+      <p className='font_2'>{projectDetails}</p>
     </article>
   );
 }

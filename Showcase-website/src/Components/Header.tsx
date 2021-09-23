@@ -1,4 +1,6 @@
 import React from "react";
+import { FaGithub } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
 
 function Header() {
   return (
@@ -10,8 +12,22 @@ function Header() {
           projects I made using Threejs.
         </h2>
         <div className="social_links">
-          <div className="github_link"></div>
-          <div className="twitter_link"></div>
+          <a
+            className="github_link"
+            href="http://"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub />
+          </a>
+          <a
+            className="twitter_link"
+            href="http://"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaTwitter />
+          </a>
         </div>
         <div className="take_a_look">
           <button className="font_2">
@@ -34,9 +50,8 @@ function Header() {
         </div>
       </div>
       <div className="canvas_right shadow"></div>
-
-      <span className="circle_1"></span>
-      <span className="circle_2"></span>
+      <span className="circle circle_1"></span>
+      <span className="circle circle_2"></span>
       <span className="cube_1"></span>
     </header>
   );
