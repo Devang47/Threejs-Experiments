@@ -405,7 +405,7 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 40px 20px;
+  padding: 40px 20px 90px;
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -543,7 +543,7 @@ header .circle_1 {
 }
 
 header .circle_2 {
-  bottom: 0;
+  bottom: 40px;
   right: -20px;
 }
 
@@ -593,7 +593,7 @@ header .cube_1 {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 80px 80px;
+    padding: 100px 80px 180px;
   }
   header .left_text {
     min-width: 500px;
@@ -627,8 +627,8 @@ header .cube_1 {
     left: -50px;
   }
   header .circle_2 {
-    bottom: 00px;
-    right: 140px;
+    bottom: 40px;
+    right: 200px;
   }
   header .cube_1 {
     top: 21px;
@@ -637,7 +637,7 @@ header .cube_1 {
 }
 
 section {
-  margin: 50px 0;
+  margin: 0 0 50px;
   padding: 0 20px;
   width: 100%;
 }

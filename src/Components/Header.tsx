@@ -1,18 +1,42 @@
-import React from "react";
+import React, { useRef, useLayoutEffect } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 
+import gsap from "gsap";
+// import ScrollTrigger from "gsap/ScrollTrigger";
+
 function Header() {
+  const objects = useRef(null);
+  const allCircles = gsap.utils.selector(objects);
+
+  useLayoutEffect(() => {
+    window.addEventListener("mousemove", animateCircle);
+    return () => {
+      window.removeEventListener("mousemove", animateCircle);
+    };
+  }, []);
+
+  function animateCircle(event: any) {
+    let mouseX = event.clientX / window.innerWidth - 0.5;
+    let mouseY = event.clientY / window.innerHeight - 0.5;
+
+    gsap.to(allCircles(".object"), {
+      x: 50 * mouseX,
+      y: 50 * mouseY,
+      duration: 0.5,
+    });
+  }
+
   return (
-    <header>
+    <header ref={objects}>
       <div className="left_text">
         <h1 className="title font_1">
           My Experiments with <span className="highlighted">WebGL</span> and
           <span className="highlighted"> Three.js </span>
         </h1>
         <h2 className="sub_title font_2">
-          Hi! my name is <span className='highlighted'>Devang Saklani</span>. These are some of my best
-          experiments / projects I made using Threejs.
+          Hi! my name is <span className="highlighted">Devang Saklani</span>.
+          These are some of my best experiments / projects I made using Threejs and R3F.
         </h2>
         <div className="social_links">
           <a
@@ -53,9 +77,9 @@ function Header() {
         </div>
       </div>
       <div className="canvas_right shadow"></div>
-      <span className="circle circle_1"></span>
-      <span className="circle circle_2"></span>
-      <span className="cube_1"></span>
+      <span className="circle circle_1 object"></span>
+      <span className="circle circle_2 object"></span>
+      <span className="cube_1 object"></span>
     </header>
   );
 }
