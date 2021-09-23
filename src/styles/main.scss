@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
 // font-family: "Montserrat", sans-serif;
 // font-family: "Poppins", sans-serif;
@@ -46,6 +46,7 @@ body {
 }
 
 .font_1 {
+  font-family: Helvetica-now;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
@@ -57,7 +58,6 @@ body {
 
 .highlighted {
   color: $tint;
-  text-shadow: 0 0 5px #064661;
 }
 
 .shadow {

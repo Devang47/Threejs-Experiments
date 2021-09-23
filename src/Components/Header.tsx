@@ -7,7 +7,7 @@ function Header() {
     <header>
       <div className="left_text">
         <h1 className="title font_1">
-          My experiments with <span className="highlighted">WebGL</span> and
+          My Experiments with <span className="highlighted">WebGL</span> and
           <span className="highlighted"> Three.js </span>
         </h1>
         <h2 className="sub_title font_2">

@@ -33,7 +33,7 @@ const ProjectsData = [
     },
   },
   {
-    id: 1,
+    id: 4,
     projectName: "Super awesome project here",
     projectDetails: ` Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto earum velit sunt.`,
     coverImg:
@@ -44,7 +44,7 @@ const ProjectsData = [
     },
   },
   {
-    id: 2,
+    id: 5,
     projectName: "Super awesome project here",
     projectDetails: ` Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto earum velit sunt.`,
     coverImg:
@@ -55,7 +55,7 @@ const ProjectsData = [
     },
   },
   {
-    id: 3,
+    id: 6,
     projectName: "Super awesome project here",
     projectDetails: ` Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto earum velit sunt.`,
     coverImg:
@@ -66,7 +66,7 @@ const ProjectsData = [
     },
   },
   {
-    id: 1,
+    id: 7,
     projectName: "Super awesome project here",
     projectDetails: ` Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto earum velit sunt.`,
     coverImg:
@@ -77,7 +77,7 @@ const ProjectsData = [
     },
   },
   {
-    id: 2,
+    id: 8,
     projectName: "Super awesome project here",
     projectDetails: ` Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto earum velit sunt.`,
     coverImg:
@@ -88,7 +88,7 @@ const ProjectsData = [
     },
   },
   {
-    id: 3,
+    id: 9,
     projectName: "Super awesome project here",
     projectDetails: ` Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto earum velit sunt.`,
     coverImg:
