@@ -1,0 +1,58 @@
+section {
+  margin: 50px 0;
+  padding: 0 20px;
+  width: 100%;
+  h2 {
+    font-size: 24px;
+    font-weight: 700 !important;
+  }
+  .section_head {
+    margin: 0 10px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 120%;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: $tint;
+    }
+  }
+  .projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    margin: 40px auto;
+    article {
+      height: 450px;
+      width: 100%;
+      max-width: 400px;
+      color: rgb(0, 0, 0);
+      border-radius: 12px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      .details {
+        margin-top: auto;
+        h2 {
+          font-size: 28px;
+          width: 80%;
+          margin: 20px 0;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+      img {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        object-fit: cover;
+        filter: blur(2px);
+      }
+    }
+  }
+}

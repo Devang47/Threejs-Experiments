@@ -8,11 +8,11 @@ function Header() {
       <div className="left_text">
         <h1 className="title font_1">
           My experiments with <span className="highlighted">WebGL</span> and
-        <span className="highlighted"> Three.js </span>  
+          <span className="highlighted"> Three.js </span>
         </h1>
         <h2 className="sub_title font_2">
-          Hi! my name is Devang Saklani. These are some of my best experiments /
-          projects I made using Threejs.
+          Hi! my name is <span className='highlighted'>Devang Saklani</span>. These are some of my best
+          experiments / projects I made using Threejs.
         </h2>
         <div className="social_links">
           <a

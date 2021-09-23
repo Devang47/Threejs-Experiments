@@ -2,7 +2,6 @@ import React from "react";
 
 interface props {
   projectHead: string;
-  key: number;
   projectDetails: string;
   coverImg: string;
   projectLinks: any;
@@ -10,15 +9,18 @@ interface props {
 
 function Project({
   projectHead,
-  key,
   projectDetails,
   coverImg,
   projectLinks,
 }: props) {
   return (
-    <article className="project_wrapper">
-      <h2 className='font_2'>{projectHead}</h2>
-      <p className='font_2'>{projectDetails}</p>
+    <article className="project_wrapper shadow">
+      <div className="details">
+        <h2 className="font_2">{projectHead}</h2>
+        <p className="font_2">{projectDetails}</p>
+      </div>
+
+      <img src={coverImg} alt="project-1" />
     </article>
   );
 }

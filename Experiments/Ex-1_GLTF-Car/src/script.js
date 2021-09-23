@@ -36,11 +36,9 @@ function init() {
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(params.bgColor);
 
-  scene.fog = new THREE.Fog("#ffffff", 4, 35);
-
-  gui.addColor(params, "bgColor").onChange(() => {
-    scene.background = new THREE.Color(params.bgColor);
-  });
+  // gui.addColor(params, "bgColor").onChange(() => {
+  //   scene.background = new THREE.Color(params.bgColor);
+  // });
 
   const sizes = {
     width: innerWidth,
@@ -82,62 +80,50 @@ function init() {
 
   params.bias = 0.05;
   directionalLight.shadow.normalBias = params.bias;
-  // const directionalLightHelper = new THREE.DirectionalLightHelper(
-  //   directionalLight,
-  //   1
-  // );
+
   scene.add(directionalLight);
 
-  gui.addColor(params, "lightColor").onChange(() => {
-    directionalLight.color = new THREE.Color(params.lightColor);
-  });
-  gui
-    .add(params.light, "x")
-    .min(0)
-    .max(10)
-    .step(0.01)
-    .name("light-x")
-    .onChange(() => {
-      directionalLight.position.x = params.light.x;
-    });
-  gui
-    .add(params.light, "y")
-    .min(0)
-    .max(10)
-    .step(0.01)
-    .name("light-y")
-    .onChange(() => {
-      directionalLight.position.x = params.light.y;
-    });
-  gui
-    .add(params.light, "z")
-    .min(0)
-    .max(10)
-    .step(0.01)
-    .name("light-z")
-    .onChange(() => {
-      directionalLight.position.x = params.light.z;
-    });
+  let hemiLight = new THREE.HemisphereLight(0xffeeb1, 0x080820, 4);
+  hemiLight.position.set(0, 50, 4)
+  scene.add(hemiLight);
+
+  // gui.addColor(params, "lightColor").onChange(() => {
+  //   directionalLight.color = new THREE.Color(params.lightColor);
+  // });
+  // gui
+  //   .add(params.light, "x")
+  //   .min(0)
+  //   .max(10)
+  //   .step(0.01)
+  //   .name("light-x")
+  //   .onChange(() => {
+  //     directionalLight.position.x = params.light.x;
+  //   });
+  // gui
+  //   .add(params.light, "y")
+  //   .min(0)
+  //   .max(10)
+  //   .step(0.01)
+  //   .name("light-y")
+  //   .onChange(() => {
+  //     directionalLight.position.x = params.light.y;
+  //   });
+  // gui
+  //   .add(params.light, "z")
+  //   .min(0)
+  //   .max(10)
+  //   .step(0.01)
+  //   .name("light-z")
+  //   .onChange(() => {
+  //     directionalLight.position.x = params.light.z;
+  //   });
 
   /**
    * objects
    */
-
-  const roadTexture = textureLoader.load("./textures/Road/1.jpg");
-  const roadNormalTexture = textureLoader.load("./textures/Road/normal.jpg");
-  const roadRoughnessTexture = textureLoader.load(
-    "./textures/Road/roughness.jpg",
-    (texture) => {
-      texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-    }
-  );
-
-  params.planeColor = 0x3f3f3f;
+  params.planeColor = 0xffffff;
   const planeMaterial = new THREE.MeshStandardMaterial({
     color: params.planeColor,
-    map: roadTexture,
-    roughnessMap: roadRoughnessTexture,
-    normalMap: roadNormalTexture,
   });
   planeMaterial.metalness = 0.1;
   planeMaterial.roughness = 1;
@@ -146,30 +132,18 @@ function init() {
     new THREE.PlaneBufferGeometry(20, 20),
     planeMaterial
   );
-  plane.rotation.x = - Math.PI / 2;
+  plane.rotation.x = -Math.PI / 2;
   scene.add(plane);
 
-  gui.addColor(params, "planeColor").onChange(() => {
-    plane.material.color = new THREE.Color(params.planeColor);
-  });
-
-  gltfLoader.load("./Car/Challenger.gltf", (gltf) => {
-    gltf.scene.traverse((child) => {
-      child.castShadow = true;
-      child.receiveShadow = true;
-    });
-    gltf.scene.position.set(-2, 0, 0);
-    gltf.scene.rotation.y = Math.PI;
-    scene.add(gltf.scene);
-    gltf.scene.scale.set(1, 1, 1);
-  });
+  // gui.addColor(params, "planeColor").onChange(() => {
+  //   plane.material.color = new THREE.Color(params.planeColor);
+  // });
 
   gltfLoader.load("./Car/ford-mustang.gltf", (gltf) => {
     gltf.scene.traverse((child) => {
       child.castShadow = true;
       child.receiveShadow = true;
     });
-    gltf.scene.position.set(2, 0, 0);
     scene.add(gltf.scene);
     gltf.scene.scale.set(1, 1, 1);
   });
@@ -178,14 +152,13 @@ function init() {
    * Environment map
    */
   const environmentMap = cubeTextureLoader.load([
-    "/textures/environmentMaps/1/px.png",
-    "/textures/environmentMaps/1/nx.png",
-    "/textures/environmentMaps/1/py.png",
-    "/textures/environmentMaps/1/ny.png",
-    "/textures/environmentMaps/1/pz.png",
-    "/textures/environmentMaps/1/nz.png",
+    "/textures/environmentMaps/2/px.png",
+    "/textures/environmentMaps/2/nx.png",
+    "/textures/environmentMaps/2/py.png",
+    "/textures/environmentMaps/2/ny.png",
+    "/textures/environmentMaps/2/pz.png",
+    "/textures/environmentMaps/2/nz.png",
   ]);
-  // scene.background = environmentMap;
   scene.environment = environmentMap;
   environmentMap.encoding = THREE.sRGBEncoding;
 
@@ -230,29 +203,15 @@ function init() {
   renderer.outputEncoding = THREE.sRGBEncoding;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
 
-  // gui
-  //   .add(renderer, "toneMapping", {
-  //     No: THREE.NoToneMapping,
-  //     Linear: THREE.LinearToneMapping,
-  //     Reinhard: THREE.ReinhardToneMapping,
-  //     Cineon: THREE.CineonToneMapping,
-  //     ACESFilmic: THREE.ACESFilmicToneMapping,
-  //   })
-  //   .onFinishChange(() => {
-  //     renderer.toneMapping = Number(renderer.toneMapping);
-  //     updateAllMaterial();
-  //   });
-
   /**
    * OrbitControls
    */
   const controls = new OrbitControls(camera, canvas);
+  controls.enableDamping = true;
   controls.autoRotate = true;
   controls.enablePan = false;
-  controls.enableZoom = false;
-  controls.minPolarAngle = Math.PI / 2.8; // radians
-  controls.maxPolarAngle = Math.PI / 2.8; // radians
-  controls.enableDamping = true; // Smooth camera movement
+  controls.minPolarAngle = Math.PI / 3; // radians
+  controls.maxPolarAngle = Math.PI / 2; // radians
 
   /**
    * Update Canvas on Resize
@@ -295,11 +254,15 @@ function init() {
   let composer = new EffectComposer(renderer);
   composer.addPass(new RenderPass(scene, camera));
 
-  // const effect1 = new ShaderPass(DotScreenShader);
-  // effect1.uniforms["scale"].value = 4;
+  const effect1 = new ShaderPass(DotScreenShader);
+  effect1.uniforms["scale"].value = 4;
+  composer.addPass(effect1);
 
-  // const effect2 = new ShaderPass(RGBShiftShader);
-  // effect2.uniforms["amount"].value = 0.0014;
+  const effect2 = new ShaderPass(RGBShiftShader);
+  effect2.uniforms["amount"].value = 0.0014;
+  composer.addPass(effect2);
+
+  renderer.toneMappingExposure = Math.pow(effects.exposure, 4.0);
 
   // const bloomPass = new UnrealBloomPass(
   //   new THREE.Vector2(window.innerWidth, window.innerHeight),
@@ -311,40 +274,29 @@ function init() {
   // bloomPass.strength = effects.bloomStrength;
   // bloomPass.radius = effects.bloomRadius;
   // composer.addPass(bloomPass);
-  renderer.toneMappingExposure = Math.pow(effects.exposure, 4.0);
 
-  gui.add(effects, "exposure", 0.1, 2).onChange(function (value) {
-    renderer.toneMappingExposure = Math.pow(value, 4.0);
-  });
+  // gui.add(effects, "exposure", 0.1, 2).onChange(function (value) {
+  //   renderer.toneMappingExposure = Math.pow(value, 4.0);
+  // });
 
-  gui.add(effects, "bloomThreshold", 0.0, 1.0).onChange(function (value) {
-    bloomPass.threshold = Number(value);
-  });
+  // gui.add(effects, "bloomThreshold", 0.0, 1.0).onChange(function (value) {
+  //   bloomPass.threshold = Number(value);
+  // });
 
-  gui.add(effects, "bloomStrength", 0.0, 3.0).onChange(function (value) {
-    bloomPass.strength = Number(value);
-  });
+  // gui.add(effects, "bloomStrength", 0.0, 3.0).onChange(function (value) {
+  //   bloomPass.strength = Number(value);
+  // });
 
-  gui
-    .add(effects, "bloomRadius", 0.0, 1.0)
-    .step(0.01)
-    .onChange(function (value) {
-      bloomPass.radius = Number(value);
-    });
+  // gui
+  //   .add(effects, "bloomRadius", 0.0, 1.0)
+  //   .step(0.01)
+  //   .onChange(function (value) {
+  //     bloomPass.radius = Number(value);
+  //   });
 
-  /**
-   * Mouse Controls
-   */
   camera.position.y = 6;
   camera.position.x = 0;
   camera.position.z = 10;
-
-  const target = new THREE.Vector2();
-  const mouse = new THREE.Vector2();
-
-  addEventListener("mousemove", (event) => {
-    mouse.x = event.clientX / window.innerWidth - 0.5;
-  });
 
   /**
    * rendering frames
@@ -354,13 +306,8 @@ function init() {
     const elapsedTime = clock.getElapsedTime() * 0.05;
 
     composer.render();
-    // renderer.toneMappingExposure = params.exposure;
-
-    // target.x = mouse.x * 26;
-    // camera.position.x += 0.1 * (target.x - camera.position.x);
 
     controls.update();
-    // camera.lookAt(new THREE.Vector3(0, 1, 0));
     requestAnimationFrame(animate);
   }
   animate();
