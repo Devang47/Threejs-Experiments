@@ -30,7 +30,8 @@ section {
       height: 450px;
       width: 100%;
       max-width: 400px;
-      color: rgb(0, 0, 0);
+      color: rgb(255, 255, 255);
+      background-color: #001219b9;
       border-radius: 12px;
       padding: 20px;
       position: relative;
@@ -38,12 +39,34 @@ section {
       .details {
         margin-top: auto;
         h2 {
-          font-size: 28px;
+          font-size: 35px;
           width: 80%;
           margin: 20px 0;
+          color: $heading;
         }
         p {
+          margin: 20px 0;
           font-size: 16px;
+          color: $sub_heading;
+          line-height: 1.5;
+        }
+        .links {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          margin: 20px 0;
+          a {
+            display: block;
+            width: fit-content;
+            color: white;
+            &:hover {
+              color: $tint;
+            }
+            svg {
+              width: 28px;
+              height: 28px;
+            }
+          }
         }
       }
       img {

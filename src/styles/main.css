@@ -599,7 +599,8 @@ section .projects article {
   height: 450px;
   width: 100%;
   max-width: 400px;
-  color: black;
+  color: white;
+  background-color: #001219b9;
   border-radius: 12px;
   padding: 20px;
   position: relative;
@@ -611,13 +612,45 @@ section .projects article .details {
 }
 
 section .projects article .details h2 {
-  font-size: 28px;
+  font-size: 35px;
   width: 80%;
   margin: 20px 0;
+  color: #e4f8ff;
 }
 
 section .projects article .details p {
+  margin: 20px 0;
   font-size: 16px;
+  color: #b9d0d9;
+  line-height: 1.5;
+}
+
+section .projects article .details .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+section .projects article .details .links a {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: white;
+}
+
+section .projects article .details .links a:hover {
+  color: #11b4fa;
+}
+
+section .projects article .details .links a svg {
+  width: 28px;
+  height: 28px;
 }
 
 section .projects article img {
