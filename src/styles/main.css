@@ -438,6 +438,10 @@ header .left_text h1 {
   color: #e4f8ff;
 }
 
+header .left_text h1 .experiments {
+  white-space: nowrap;
+}
+
 header .left_text h1 .experiments svg {
   height: 45px;
   width: 36px;
@@ -620,7 +624,8 @@ header .cube_1 {
           transform: rotate(30deg);
 }
 
-.threejs_logo, .webgl_logo {
+.threejs_logo,
+.webgl_logo {
   opacity: 0;
   position: absolute;
   top: 0;
@@ -631,11 +636,15 @@ header .cube_1 {
   pointer-events: none;
 }
 
-.threejs_logo img, .webgl_logo img {
+.threejs_logo img,
+.webgl_logo img {
   width: 150px;
 }
 
 @media screen and (min-width: 500px) {
+  header .left_text h1 .experiments {
+    white-space: normal;
+  }
   header .left_text {
     max-width: 450px;
   }
@@ -714,6 +723,7 @@ header .cube_1 {
   margin: 0 0 50px;
   padding: 50px 20px 0;
   width: 100%;
+  position: relative;
 }
 
 #showcase .wrapper {
@@ -795,6 +805,7 @@ header .cube_1 {
   font-size: 16px;
   color: #b9d0d9;
   line-height: 1.5;
+  max-width: 90%;
   margin: 20px 0 25px;
 }
 
@@ -815,10 +826,13 @@ header .cube_1 {
   width: -moz-fit-content;
   width: fit-content;
   color: white;
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease;
 }
 
 #showcase .projects article .details .links a:hover {
-  color: #11b4fa;
+  -webkit-transform: translate(0, -10%);
+          transform: translate(0, -10%);
 }
 
 #showcase .projects article .details .links a svg {
@@ -834,6 +848,46 @@ header .cube_1 {
      object-fit: cover;
   -webkit-filter: blur(2px);
           filter: blur(2px);
+}
+
+#showcase .circle {
+  position: absolute;
+  top: 500px;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #164355;
+}
+
+@media screen and (min-width: 500px) {
+  #showcase .wrapper {
+    max-width: 460px;
+  }
+  #showcase .projects article {
+    max-width: 460px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #showcase .wrapper {
+    max-width: 900px;
+  }
+  #showcase .projects {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #showcase .projects article {
+    max-width: 400px;
+  }
 }
 
 footer {
