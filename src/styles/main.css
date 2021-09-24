@@ -843,7 +843,10 @@ header .cube_1 {
 
 #showcase .projects article img {
   position: absolute;
-  inset: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -852,6 +855,13 @@ header .cube_1 {
   object-fit: cover;
   -webkit-filter: blur(2px);
           filter: blur(2px);
+  -webkit-transition: height 0.3s ease, width 0.3s ease;
+  transition: height 0.3s ease, width 0.3s ease;
+}
+
+#showcase .projects article:hover img {
+  height: 110%;
+  width: 110%;
 }
 
 #showcase .object {
@@ -895,7 +905,7 @@ header .cube_1 {
 
 @media screen and (min-width: 950px) {
   #showcase {
-    padding: 50px 50px 0;
+    padding: 50px 50px 60px;
   }
   #showcase .wrapper {
     max-width: 900px;
@@ -924,7 +934,7 @@ header .cube_1 {
 
 @media screen and (min-width: 1200px) {
   #showcase {
-    padding: 50px 80px 0;
+    padding: 50px 80px 60px;
   }
   #showcase .wrapper {
     max-width: 1400px;
@@ -988,6 +998,7 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: #00060850;
 }
 
 footer h3 {
@@ -1005,4 +1016,13 @@ footer h3::after {
   width: 100px;
   height: 3px;
   background-color: #11b4fa;
+}
+
+@media screen and (min-width: 1100px) {
+  footer {
+    padding: 100px 0;
+  }
+  footer h3 {
+    font-size: 28px;
+  }
 }
