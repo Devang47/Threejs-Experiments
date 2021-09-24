@@ -459,6 +459,7 @@ header .left_text h1::after {
 
 header .left_text h1 .highlighted {
   position: relative;
+  cursor: pointer;
 }
 
 header .left_text h1 .highlighted::after {
@@ -664,7 +665,7 @@ header .cube_1 {
   }
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 950px) {
   header {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -843,24 +844,47 @@ header .cube_1 {
 #showcase .projects article img {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  z-index: -1;
+  object-fit: cover;
   -webkit-filter: blur(2px);
           filter: blur(2px);
 }
 
-#showcase .circle {
+#showcase .object {
   position: absolute;
-  top: 500px;
-  left: 0;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   background-color: #164355;
+  z-index: -2;
+}
+
+#showcase .circle1 {
+  left: 50px;
+  bottom: 600px;
+}
+
+#showcase .circle2 {
+  left: 50px;
+  top: 300px;
+}
+
+#showcase .cube {
+  top: 600px;
+  right: 50px;
+  border-radius: 12px;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
 }
 
 @media screen and (min-width: 500px) {
+  #showcase {
+    padding: 50px 40px 0;
+  }
   #showcase .wrapper {
     max-width: 460px;
   }
@@ -869,24 +893,83 @@ header .cube_1 {
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 950px) {
+  #showcase {
+    padding: 50px 50px 0;
+  }
   #showcase .wrapper {
     max-width: 900px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  #showcase h2 {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   #showcase .projects {
-    width: 100%;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    display: -ms-grid;
+    display: grid;
   }
   #showcase .projects article {
     max-width: 400px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #showcase {
+    padding: 50px 80px 0;
+  }
+  #showcase .wrapper {
+    max-width: 1400px;
+  }
+  #showcase .projects {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+  #showcase .projects article {
+    padding: 20px 20px;
+  }
+  #showcase .projects article:first-child {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+  }
+  #showcase .projects article:nth-child(4) {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-column: 2/4;
+  }
+  #showcase .projects article:nth-child(5) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+  }
+  #showcase .projects article:first-child,
+  #showcase .projects article:nth-child(4),
+  #showcase .projects article:nth-child(5) {
+    width: 100%;
+    max-width: none;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding: 30px 40px;
+  }
+  #showcase .projects article:first-child .details h2,
+  #showcase .projects article:nth-child(4) .details h2,
+  #showcase .projects article:nth-child(5) .details h2 {
+    width: 50%;
+  }
+  #showcase .projects article:first-child .details p,
+  #showcase .projects article:nth-child(4) .details p,
+  #showcase .projects article:nth-child(5) .details p {
+    width: 66%;
   }
 }
 

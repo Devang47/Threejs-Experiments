@@ -7,31 +7,6 @@ import gsap from "gsap";
 // import ScrollTrigger from "gsap/ScrollTrigger";
 
 function Header() {
-  const ThreeJSLogo = useRef(null);
-
-  function animateLogo(event: any) {
-    gsap.to(ThreeJSLogo.current, {
-      opacity: 1,
-      x: event.clientX,
-      y: event.clientY,
-    });
-  }
-
-  const mouseOver = (event: string) => {
-    gsap.to(ThreeJSLogo.current, {
-      opacity: 1,
-    });
-    window.addEventListener("mousemove", animateLogo);
-  };
-
-  const mouseLeave = (event: string) => {
-    window.removeEventListener("mousemove", animateLogo);
-
-    gsap.to(ThreeJSLogo.current, {
-      opacity: 0,
-    });
-  };
-
   const objects = useRef(null);
   const allCircles = gsap.utils.selector(objects);
 
@@ -64,15 +39,8 @@ function Header() {
             <Flask />
             ments{" "}
           </span>
-          with <span className="highlighted">WebGL </span>
-          and{" "}
-          <span
-            className="highlighted"
-            onMouseEnter={() => mouseOver("threejs")}
-            onMouseLeave={() => mouseLeave("threejs")}
-          >
-            Three.js
-          </span>
+          with <span className="highlighted"> WebGL </span>
+          and <span className="highlighted"> Three.js</span>
         </h1>
         <h2 className="sub_title font_2">
           Hi! my name is <span className="highlighted">Devang Saklani</span>.
@@ -123,13 +91,6 @@ function Header() {
       <span className="circle circle_1 object"></span>
       <span className="circle circle_2 object"></span>
       <span className="cube_1 object"></span>
-
-      <div ref={ThreeJSLogo} className="threejs_logo">
-        <img
-          src="https://res.cloudinary.com/dyn3sdtfm/image/upload/v1632453716/Frame_2_monzqq.jpg"
-          alt=""
-        />
-      </div>
     </header>
   );
 }

@@ -4,7 +4,7 @@ const ProjectsData = [
     projectName: "Super awesome project here",
     projectDetails: ` Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto earum velit sunt.`,
     coverImg:
-      "https://images.unsplash.com/photo-1632295625247-f3b6e4dbcec5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80",
+      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     links: {
       projectLink: "url here",
       githubRepoLink: "url here",
@@ -37,7 +37,7 @@ const ProjectsData = [
     projectName: "Super awesome project here",
     projectDetails: ` Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto earum velit sunt.`,
     coverImg:
-      "https://images.unsplash.com/photo-1632295625247-f3b6e4dbcec5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80",
+      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     links: {
       projectLink: "url here",
       githubRepoLink: "url here",
@@ -70,7 +70,7 @@ const ProjectsData = [
     projectName: "Super awesome project here",
     projectDetails: ` Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto earum velit sunt.`,
     coverImg:
-      "https://images.unsplash.com/photo-1632295625247-f3b6e4dbcec5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80",
+      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     links: {
       projectLink: "url here",
       githubRepoLink: "url here",
