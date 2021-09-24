@@ -16,6 +16,12 @@ header {
       margin: 30px 0;
       position: relative;
       color: $heading;
+      .experiments {
+        svg {
+          height: 45px;
+          width: 36px;
+        }
+      }
       &::after {
         content: "";
         height: 4.5px;
@@ -24,6 +30,28 @@ header {
         position: absolute;
         top: 110%;
         left: 0;
+      }
+      .highlighted {
+        position: relative;
+        &::after {
+          opacity: 0;
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100px;
+          height: 100px;
+          // background-color: red;
+          // background-image: url();
+          z-index: -1;
+          transition: opacity 0.1s ease;
+        }
+        &:hover {
+          &::after {
+            opacity: 1;
+          }
+        }
       }
     }
     h2 {
@@ -45,6 +73,10 @@ header {
         display: block;
         width: fit-content;
         color: $sub_heading;
+        transition: 0.1s ease;
+        &:hover{
+          transform: translate(0, -10%)
+        }
         svg {
           width: 26px;
           height: 26px;
@@ -53,6 +85,13 @@ header {
     }
     .take_a_look {
       margin-top: 65px;
+      a{
+        text-decoration: none;
+        display: block;
+        width: fit-content;
+        height: fit-content;
+        color: white;
+      }
       button {
         cursor: pointer;
         display: block;
@@ -121,6 +160,19 @@ header {
     right: 0px;
     z-index: -1;
     transform: rotate(30deg);
+  }
+}
+
+.threejs_logo, .webgl_logo{
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  pointer-events: none;
+  img{
+    width: 150px;
   }
 }
 

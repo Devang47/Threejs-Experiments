@@ -4,7 +4,7 @@ import ProjectsData from "./ProjectsData";
 
 function Works() {
   return (
-    <section>
+    <section id='showcase'>
       <div className="wrapper">
 
       <h2 className="section_head font_2">Recent Works:</h2>

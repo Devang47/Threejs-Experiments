@@ -26,6 +26,7 @@
 
 html {
   width: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -53,6 +54,17 @@ body {
 .shadow {
   -webkit-box-shadow: 0.6px 1px 1px rgba(0, 0, 0, 0.031), 1.5px 2.3px 2.5px rgba(0, 0, 0, 0.044), 2.9px 4.4px 4.6px rgba(0, 0, 0, 0.055), 5.1px 7.8px 8.3px rgba(0, 0, 0, 0.066), 9.6px 14.6px 15.5px rgba(0, 0, 0, 0.079), 23px 35px 37px rgba(0, 0, 0, 0.11);
           box-shadow: 0.6px 1px 1px rgba(0, 0, 0, 0.031), 1.5px 2.3px 2.5px rgba(0, 0, 0, 0.044), 2.9px 4.4px 4.6px rgba(0, 0, 0, 0.055), 5.1px 7.8px 8.3px rgba(0, 0, 0, 0.066), 9.6px 14.6px 15.5px rgba(0, 0, 0, 0.079), 23px 35px 37px rgba(0, 0, 0, 0.11);
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: #e4f8ff;
+  background: #164355;
+}
+
+::selection {
+  color: #e4f8ff;
+  background: #164355;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -426,6 +438,11 @@ header .left_text h1 {
   color: #e4f8ff;
 }
 
+header .left_text h1 .experiments svg {
+  height: 45px;
+  width: 36px;
+}
+
 header .left_text h1::after {
   content: "";
   height: 4.5px;
@@ -434,6 +451,29 @@ header .left_text h1::after {
   position: absolute;
   top: 110%;
   left: 0;
+}
+
+header .left_text h1 .highlighted {
+  position: relative;
+}
+
+header .left_text h1 .highlighted::after {
+  opacity: 0;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  z-index: -1;
+  -webkit-transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
+}
+
+header .left_text h1 .highlighted:hover::after {
+  opacity: 1;
 }
 
 header .left_text h2 {
@@ -466,6 +506,13 @@ header .left_text .social_links a {
   width: -moz-fit-content;
   width: fit-content;
   color: #b9d0d9;
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease;
+}
+
+header .left_text .social_links a:hover {
+  -webkit-transform: translate(0, -10%);
+          transform: translate(0, -10%);
 }
 
 header .left_text .social_links a svg {
@@ -475,6 +522,18 @@ header .left_text .social_links a svg {
 
 header .left_text .take_a_look {
   margin-top: 65px;
+}
+
+header .left_text .take_a_look a {
+  text-decoration: none;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  color: white;
 }
 
 header .left_text .take_a_look button {
@@ -561,6 +620,21 @@ header .cube_1 {
           transform: rotate(30deg);
 }
 
+.threejs_logo, .webgl_logo {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.threejs_logo img, .webgl_logo img {
+  width: 150px;
+}
+
 @media screen and (min-width: 500px) {
   header .left_text {
     max-width: 450px;
@@ -636,28 +710,28 @@ header .cube_1 {
   }
 }
 
-section {
+#showcase {
   margin: 0 0 50px;
-  padding: 0 20px;
+  padding: 50px 20px 0;
   width: 100%;
 }
 
-section .wrapper {
+#showcase .wrapper {
   max-width: 395px;
   margin: 0 auto;
 }
 
-section h2 {
+#showcase h2 {
   font-size: 24px;
   font-weight: 700 !important;
 }
 
-section .section_head {
+#showcase .section_head {
   margin: 0 10px;
   position: relative;
 }
 
-section .section_head::after {
+#showcase .section_head::after {
   content: "";
   position: absolute;
   top: 120%;
@@ -667,7 +741,7 @@ section .section_head::after {
   background-color: #11b4fa;
 }
 
-section .projects {
+#showcase .projects {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -685,7 +759,7 @@ section .projects {
   margin: 40px auto;
 }
 
-section .projects article {
+#showcase .projects article {
   height: 450px;
   width: 100%;
   max-width: 400px;
@@ -706,25 +780,25 @@ section .projects article {
           justify-content: center;
 }
 
-section .projects article .details {
+#showcase .projects article .details {
   margin-top: auto;
 }
 
-section .projects article .details h2 {
+#showcase .projects article .details h2 {
   font-size: 32px;
   width: 80%;
   margin: 20px 0;
   color: #e4f8ff;
 }
 
-section .projects article .details p {
+#showcase .projects article .details p {
   font-size: 16px;
   color: #b9d0d9;
   line-height: 1.5;
   margin: 20px 0 25px;
 }
 
-section .projects article .details .links {
+#showcase .projects article .details .links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -735,7 +809,7 @@ section .projects article .details .links {
   margin: 15px 0;
 }
 
-section .projects article .details .links a {
+#showcase .projects article .details .links a {
   display: block;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -743,16 +817,16 @@ section .projects article .details .links a {
   color: white;
 }
 
-section .projects article .details .links a:hover {
+#showcase .projects article .details .links a:hover {
   color: #11b4fa;
 }
 
-section .projects article .details .links a svg {
+#showcase .projects article .details .links a svg {
   width: 24px;
   height: 24px;
 }
 
-section .projects article img {
+#showcase .projects article img {
   position: absolute;
   inset: 0;
   z-index: -1;
