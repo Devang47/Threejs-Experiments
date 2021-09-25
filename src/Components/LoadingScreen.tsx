@@ -18,17 +18,17 @@ function LoadingScreen() {
       })
       .to(whiteScreen.current, {
         height: "100%",
-        duration: 0.6,
+        duration: 0.5,
       })
       .to(whiteScreen.current, {
         width: "0%",
-        duration: 0.7,
+        duration: 0.5,
       });
 
     gsap.to(loadingScreen.current, {
       display: "none",
       duration: 0,
-      delay: 2.2,
+      delay: 2.1,
     });
   }, []);
 

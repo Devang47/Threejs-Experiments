@@ -24,7 +24,7 @@ function Header() {
     gsap
       .timeline({
         ease: "Expo.easeInOut",
-        delay: 3.2,
+        delay: 3,
       })
       .from(allCircles(".object"), {
         y: "-20px",
@@ -57,9 +57,9 @@ function Header() {
           <span className="experiments">
             Exper
             <Flask />
-            ments{" "}
+            ments
           </span>
-          with <span className="highlighted"> WebGL </span>
+          {" "}with <span className="highlighted"> WebGL </span>
           and <span className="highlighted"> Three.js</span>
           <span ref={line} className="line"></span>
         </h1>

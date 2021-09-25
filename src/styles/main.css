@@ -7,12 +7,6 @@
 
 @font-face {
   font-family: Helvetica-now;
-  font-weight: 500;
-  src: url("../Fonts/HelveticaNowText-Medium.woff");
-}
-
-@font-face {
-  font-family: Helvetica-now;
   font-weight: 400;
   src: url("../Fonts/HelveticaNowText-Regular.woff");
 }
@@ -1084,6 +1078,7 @@ footer .contact_links a svg {
           flex-direction: column;
   gap: 25px;
   z-index: 5;
+  padding-bottom: 100px;
 }
 
 .loading_screen .loading_animation svg {
