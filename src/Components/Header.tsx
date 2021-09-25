@@ -7,11 +7,31 @@ import gsap from "gsap";
 // import ScrollTrigger from "gsap/ScrollTrigger";
 
 function Header() {
-  const objects = useRef(null);
-  const allCircles = gsap.utils.selector(objects);
+  const heading = useRef(null);
+  const line = useRef(null);
+  const para = useRef(null);
+  const canvas = useRef(null);
+  const movingObjects = useRef(null);
+  const links = useRef(null);
+  const button = useRef(null);
+
+  const allCircles = gsap.utils.selector(movingObjects);
+  const linksWrapper = gsap.utils.selector(links);
 
   useLayoutEffect(() => {
     window.addEventListener("mousemove", animateCircle);
+
+    gsap
+      .timeline({
+        ease: "Expo.easeInOut",
+        delay: 3.2,
+      })
+      .from(allCircles(".object"), {
+        y: "-20px",
+        opacity: 0,
+        duration: 0.6,
+      });
+
     return () => {
       window.removeEventListener("mousemove", animateCircle);
     };
@@ -30,9 +50,9 @@ function Header() {
   }
 
   return (
-    <header ref={objects}>
+    <header ref={movingObjects}>
       <div className="left_text">
-        <h1 className="title font_1">
+        <h1 ref={heading} className="title font_1">
           My{" "}
           <span className="experiments">
             Exper
@@ -41,24 +61,25 @@ function Header() {
           </span>
           with <span className="highlighted"> WebGL </span>
           and <span className="highlighted"> Three.js</span>
+          <span ref={line} className="line"></span>
         </h1>
-        <h2 className="sub_title font_2">
+        <h2 ref={para} className="sub_title font_2">
           Hi! my name is <span className="highlighted">Devang Saklani</span>.
           These are some of my best experments / projects I made using Threejs
           and R3F.
         </h2>
-        <div className="social_links">
+        <div ref={links} className="social_links">
           <a
-            className="github_link"
-            href="http://"
+            className="github_link link"
+            href="https://github.com/Devang47"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaGithub />
           </a>
           <a
-            className="twitter_link"
-            href="http://"
+            className="twitter_link link"
+            href="https://twitter.com/DevangSaklani"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -87,7 +108,7 @@ function Header() {
           </a>
         </div>
       </div>
-      <div className="canvas_right shadow"></div>
+      <div ref={canvas} className="canvas_right shadow"></div>
       <span className="circle circle_1 object"></span>
       <span className="circle circle_2 object"></span>
       <span className="cube_1 object"></span>

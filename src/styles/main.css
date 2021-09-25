@@ -27,6 +27,8 @@
 html {
   width: 100%;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #164355 #001219;
 }
 
 body {
@@ -34,7 +36,6 @@ body {
   color: white;
   width: 100%;
   overflow-x: hidden;
-  overflow: hidden;
 }
 
 .font_1 {
@@ -66,6 +67,20 @@ body {
 ::selection {
   color: #e4f8ff;
   background: #164355;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(#001219);
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  background-color: var(#001219);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(#164355);
+  border: 2px solid var(#e4f8ff);
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -448,8 +463,8 @@ header .left_text h1 .experiments svg {
   width: 36px;
 }
 
-header .left_text h1::after {
-  content: "";
+header .left_text h1 .line {
+  display: block;
   height: 4.5px;
   width: 80px;
   background-color: #e4f8ff;
@@ -790,6 +805,7 @@ header .cube_1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  border: 2px solid #001219;
 }
 
 #showcase .projects article .details {
@@ -854,8 +870,8 @@ header .cube_1 {
      object-fit: cover;
   z-index: -1;
   object-fit: cover;
-  -webkit-filter: blur(2px);
-          filter: blur(2px);
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
   -webkit-transition: -webkit-filter 0.3s ease;
   transition: -webkit-filter 0.3s ease;
   transition: filter 0.3s ease;
@@ -987,7 +1003,7 @@ header .cube_1 {
 }
 
 footer {
-  padding: 50px 0 60px;
+  padding: 60px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1001,6 +1017,7 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  gap: 40px;
   background-color: #00060850;
 }
 
@@ -1021,9 +1038,22 @@ footer h3::after {
   background-color: #11b4fa;
 }
 
+footer .contact_links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+}
+
+footer .contact_links a svg {
+  height: 24px;
+  width: 24px;
+  color: #e4f8ff;
+}
+
 @media screen and (min-width: 1100px) {
   footer {
-    padding: 100px 0;
+    padding: 70px 0;
   }
   footer h3 {
     font-size: 28px;

@@ -24,8 +24,8 @@ header {
           width: 36px;
         }
       }
-      &::after {
-        content: "";
+      .line {
+        display: block;
         height: 4.5px;
         width: 80px;
         background-color: $heading;

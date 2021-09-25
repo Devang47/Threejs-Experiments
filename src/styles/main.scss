@@ -37,6 +37,8 @@ $tint: #11b4fa;
 html {
   width: 100%;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: $circles $bg;
 }
 
 body {
@@ -44,7 +46,6 @@ body {
   color: white;
   width: 100%;
   overflow-x: hidden;
-  overflow: hidden;
 }
 
 .font_1 {
@@ -79,6 +80,20 @@ body {
 ::selection {
   color: #e4f8ff;
   background: #164355;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var($bg);
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  background-color: var($bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var($circles);
+  border: 2px solid var($heading);
 }
 
 @import "./normalize";

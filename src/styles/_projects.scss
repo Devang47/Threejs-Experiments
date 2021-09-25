@@ -90,9 +90,10 @@
         object-fit: cover;
         z-index: -1;
         object-fit: cover;
-        filter: blur(2px);
+        filter: blur(4px);
         transition: filter 0.3s ease;
       }
+      border: 2px solid $bg;
       &:hover {
         img {
           filter: blur(0.1px);

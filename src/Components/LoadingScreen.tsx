@@ -1,12 +1,8 @@
 import React from "react";
 import Flask from "./Assets/Flask";
 import { gsap } from "gsap";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-
-gsap.registerPlugin(MotionPathPlugin);
 
 function LoadingScreen() {
-
   const loadingScreen = React.useRef(null);
   const loadingBar = React.useRef(null);
   const whiteScreen = React.useRef(null);
@@ -18,27 +14,22 @@ function LoadingScreen() {
       })
       .to(loadingBar.current, {
         width: "100%",
-        duration: 2,
-      })
-      .to(loadingScreen.current, {
-        opacity: "0",
-        duration: 0.5,
+        duration: 1.6,
       })
       .to(whiteScreen.current, {
         height: "100%",
-        duration: 0.8,
+        duration: 0.6,
       })
       .to(whiteScreen.current, {
         width: "0%",
-        duration: 0.8,
+        duration: 0.7,
       });
 
-      gsap.to(loadingScreen.current, {
-        display: 'none',
-        duration: 0,
-        delay: 3.3
-      })
-
+    gsap.to(loadingScreen.current, {
+      display: "none",
+      duration: 0,
+      delay: 2.2,
+    });
   }, []);
 
   return (
