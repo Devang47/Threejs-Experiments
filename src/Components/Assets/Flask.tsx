@@ -30,10 +30,10 @@ function Flask() {
           strokeWidth="9"
           strokeLinejoin="round"
         />
-        <circle cx="44" cy="80" r="4" stroke="#E4F8FF" strokeWidth="4" />
-        <circle cx="48" cy="60" r="2.5" stroke="#E4F8FF" strokeWidth="3" />
-        <circle cx="37" cy="25" r="4" stroke="#E4F8FF" strokeWidth="4" />
-        <circle cx="54" cy="35" r="2.5" stroke="#E4F8FF" strokeWidth="3" />
+        <circle className='circle_1' cx="44" cy="80" r="4" stroke="#E4F8FF" strokeWidth="4" />
+        <circle className='circle_2' cx="48" cy="60" r="2.5" stroke="#E4F8FF" strokeWidth="3" />
+        <circle className='circle_3' cx="37" cy="25" r="4" stroke="#E4F8FF" strokeWidth="4" />
+        <circle className='circle_4' cx="54" cy="35" r="2.5" stroke="#E4F8FF" strokeWidth="3" />
       </g>
       <defs>
         <clipPath id="clip0">

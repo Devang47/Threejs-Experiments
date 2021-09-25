@@ -1,0 +1,47 @@
+.loading_screen {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: $bg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+  z-index: 5;
+  .loading_animation {
+    svg {
+      width: 150px;
+
+      // .circle_1{
+      //     transform: translate(10px);
+      // }
+    }
+  }
+  .loading_bar_bg {
+    width: 164px;
+    height: 4px;
+    background-color: $circles;
+    position: relative;
+    .loading_bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: $heading;
+    }
+  }
+}
+.white_screen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 0%;
+  z-index: 10;
+  background-color: $heading;
+}
