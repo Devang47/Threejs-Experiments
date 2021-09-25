@@ -58,8 +58,8 @@ function Header() {
             Exper
             <Flask />
             ments
-          </span>
-          {" "}with <span className="highlighted"> WebGL </span>
+          </span>{" "}
+          with <span className="highlighted"> WebGL </span>
           and <span className="highlighted"> Three.js</span>
           <span ref={line} className="line"></span>
         </h1>
@@ -74,6 +74,7 @@ function Header() {
             href="https://github.com/Devang47"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Github"
           >
             <FaGithub />
           </a>
@@ -82,6 +83,7 @@ function Header() {
             href="https://twitter.com/DevangSaklani"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Twitter"
           >
             <FaTwitter />
           </a>

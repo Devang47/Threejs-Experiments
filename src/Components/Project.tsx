@@ -28,6 +28,7 @@ function Project({
             href={projectLinks.githubRepoLink}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Github link"
           >
             <FaGithub />
           </a>
@@ -35,6 +36,7 @@ function Project({
             href={projectLinks.projectLink}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Live site link"
           >
             <FiExternalLink />
           </a>

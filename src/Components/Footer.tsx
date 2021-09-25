@@ -1,7 +1,7 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
-import { GrMail } from 'react-icons/gr'
+import { GrMail } from "react-icons/gr";
 
 function Footer() {
   return (
@@ -14,6 +14,7 @@ function Footer() {
           href="https://github.com/Devang47"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="github"
         >
           <FaGithub />
         </a>
@@ -22,10 +23,15 @@ function Footer() {
           href="https://twitter.com/DevangSaklani"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Twitter"
         >
           <FaTwitter />
         </a>
-        <a className="twitter_link link" href="mailto:devangsaklani@gmail.com">
+        <a
+          className="email_link link"
+          aria-label="Email"
+          href="mailto:devangsaklani@gmail.com"
+        >
           <GrMail />
         </a>
       </div>
